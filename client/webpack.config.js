@@ -19,10 +19,12 @@ module.exports = () => {
         template: './index.html',
         title: 'JATE',
       }),
+      // Injects custom service worker
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
+      // Creates a manifest.json file
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,

@@ -22,6 +22,7 @@ export const putDb = async (content) => {
 
   const store = tx.objectStore('jate')
 
+  // Update the database with the new content while keeping the same id
   const request = store.put({ content, id: 1 })
 
   await request
@@ -39,6 +40,7 @@ export const getDb = async () => {
 
   const store = tx.objectStore('jate')
 
+  // Get the content from the database with the id of 1, in this case all of the content
   const request = store.get(1)
 
   const result = await request
